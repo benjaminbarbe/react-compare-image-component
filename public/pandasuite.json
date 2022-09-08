@@ -3,96 +3,116 @@
     "main": "",
   
     "system": {
-      "localization": false,
+      "autoSave": false,
       "actions": [
         {
           "id": "toMarker",
-          "name": "Change Image",
+          "name": "Change Position",
           "locale_name": {
-            "fr_FR": "Change Image"
+            "fr_FR": "Changer Position"
           },
           "params": [
-            { "id": "useless", "name": "Useless", "locale_name": {"fr_FR": "Inutile"}, "type": "Boolean" }
+            { "id": "duration", "name": "Duration", "locale_name": {"fr_FR": "Durée"}, "type": "Float" }
           ]
         }
       ],
       "events": [
         {
           "id": "triggerMarker",
-          "name": "Image",
+          "name": "Position",
           "locale_name": {
-            "fr_FR": "Image"
+            "fr_FR": "Position"
           }
-        }
-      ],
-      "markers": [
-        {
-          "params": [
-            { "id": "src", "name": "Source", "locale_name": {"fr_FR": "Source"}, "type": "String" }
-          ]
         }
       ]
     },
 
     "properties": [
       {
-        "id": "searchTerm",
-        "name": "Search Term",
+        "id": "vertical",
+        "name": "Vertical",
         "locale_name": {
-          "fr_FR": "Terme de recherche"
+          "fr_FR": "Vertical"
         },
-        "type": "String",
-        "value": "panda"
+        "type": "Boolean",
+        "value": false
+      },
+      {
+        "id": "sliderLineColor",
+        "name": "Line Color",
+        "locale_name": {
+          "fr_FR": "Couleur ligne"
+        },
+        "type": "Color",
+        "separator": true
+      },
+      {
+        "id": "sliderLineWidth",
+        "name": "Line Width",
+        "locale_name": {
+          "fr_FR": "Largeur ligne"
+        },
+        "type": "Integer",
+        "value": 2
+      },
+      {
+        "id": "handle",
+        "name": "Handle",
+        "locale_name": {
+          "fr_FR": "Poignée"
+        },
+        "type": "Boolean",
+        "value": true
       }
     ],
   
     "events": [
       {
-        "id": "imageChanged",
-        "name": "Image Changed",
+        "id": "onDragStart",
+        "name": "On drag start",
         "locale_name": {
-          "fr_FR": "Image Changée"
+          "fr_FR": "Commencer à glisser"
+        }
+      },
+      {
+        "id": "onDragEnd",
+        "name": "On drag end",
+        "locale_name": {
+          "fr_FR": "Arrêt de glisser"
         }
       }
     ],
   
-    "actions": [
-      {
-        "id": "changeColor",
-        "name": "Change Color",
-        "params": [
-          {
-            "id": "backgroundColor",
-            "name": "Background Color",
-            "locale_name": {
-              "fr_FR": "Couleur de fond"
-            },
-            "type": "String",
-            "value": "#FFFFFF"
-          }
-        ]
-      }
-    ],
-
     "synchronization": [
       {
-        "id": "synchroImages",
-        "name": "Synchronize images",
+        "id": "position",
+        "name": "Synchronize position",
         "locale_name": {
-          "fr_FR": "Synchroniser images"
+          "fr_FR": "Synchroniser position"
         }
       }
     ],
   
     "resources": [
       {
-        "id": "my_image.png",
-        "name": "Example image",
+        "id": "left.png",
+        "name": "Left image",
         "locale_name": {
-          "fr_FR": "Image exemple"
+          "fr_FR": "Image gauche"
         },
         "type": "Image",
-        "localization": false
+        "localization": false,
+        "required": true
+      },
+      {
+        "id": "right.png",
+        "name": "Right image",
+        "locale_name": {
+          "fr_FR": "Image droite"
+        },
+        "type": "Image",
+        "localization": false,
+        "required": true
       }
     ]
 }
