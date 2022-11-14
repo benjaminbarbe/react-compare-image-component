@@ -29,6 +29,12 @@
   <body class="w-full h-full" >
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root" class="w-full h-full"></div>
+    <script>
+      document.getElementById('root').addEventListener('touchstart', function(e) {
+        // prevent swipe to navigate gesture
+        e.preventDefault();
+      });
+    </script>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
