@@ -1,119 +1,172 @@
 {
-    "version": "2.0.0",
-    "main": "",
-  
-    "system": {
-      "autoSave": false,
-      "actions": [
-        {
-          "id": "toMarker",
-          "name": "Change Position",
-          "locale_name": {
-            "fr_FR": "Changer Position"
-          },
-          "params": [
-            { "id": "duration", "name": "Duration", "locale_name": {"fr_FR": "Durée"}, "type": "Float" }
-          ]
-        }
-      ],
-      "events": [
-        {
-          "id": "triggerMarker",
-          "name": "Position",
-          "locale_name": {
-            "fr_FR": "Position"
+  "meta": {
+    "stype": "before-after",
+    "componentURL": "https://github.com/benjaminbarbe/react-compare-image-component/",
+    "description": "Before/After image comparison slider with draggable divider. Supports position markers and synchronization for interactive reveals.",
+    "locale_description": {
+      "fr_FR": "Curseur de comparaison d'images avant/après avec séparateur déplaçable. Supporte les marqueurs de position et la synchronisation pour les révélations interactives."
+    }
+  },
+  "version": "2.0.0",
+  "main": "",
+  "system": {
+    "autoSave": false,
+    "actions": [
+      {
+        "id": "toMarker",
+        "name": "Change Position",
+        "locale_name": {
+          "fr_FR": "Changer Position"
+        },
+        "params": [
+          {
+            "id": "duration",
+            "name": "Duration",
+            "locale_name": {
+              "fr_FR": "Durée"
+            },
+            "type": "Float"
           }
+        ],
+        "description": "Set the slider to a specific marker position.",
+        "locale_description": {
+          "fr_FR": "Placer le curseur à la position d'un marqueur spécifique."
         }
-      ]
-    },
-
-    "properties": [
-      {
-        "id": "vertical",
-        "name": "Vertical",
-        "locale_name": {
-          "fr_FR": "Vertical"
-        },
-        "type": "Boolean",
-        "value": false
-      },
-      {
-        "id": "sliderLineColor",
-        "name": "Line Color",
-        "locale_name": {
-          "fr_FR": "Couleur ligne"
-        },
-        "type": "Color",
-        "separator": true
-      },
-      {
-        "id": "sliderLineWidth",
-        "name": "Line Width",
-        "locale_name": {
-          "fr_FR": "Largeur ligne"
-        },
-        "type": "Integer",
-        "value": 2
-      },
-      {
-        "id": "handle",
-        "name": "Handle",
-        "locale_name": {
-          "fr_FR": "Poignée"
-        },
-        "type": "Boolean",
-        "value": true
       }
     ],
-  
     "events": [
       {
-        "id": "onDragStart",
-        "name": "On drag start",
+        "id": "triggerMarker",
+        "name": "Position",
         "locale_name": {
-          "fr_FR": "Commencer à glisser"
-        }
-      },
-      {
-        "id": "onDragEnd",
-        "name": "On drag end",
-        "locale_name": {
-          "fr_FR": "Arrêt de glisser"
-        }
-      }
-    ],
-  
-    "synchronization": [
-      {
-        "id": "position",
-        "name": "Synchronize position",
-        "locale_name": {
-          "fr_FR": "Synchroniser position"
-        }
-      }
-    ],
-  
-    "resources": [
-      {
-        "id": "left.png",
-        "name": "Left image",
-        "locale_name": {
-          "fr_FR": "Image gauche"
+          "fr_FR": "Position"
         },
-        "type": "Image",
-        "localization": false,
-        "required": true
-      },
-      {
-        "id": "right.png",
-        "name": "Right image",
-        "locale_name": {
-          "fr_FR": "Image droite"
-        },
-        "type": "Image",
-        "localization": false,
-        "required": true
+        "description": "Fires when the slider reaches a marker position.",
+        "locale_description": {
+          "fr_FR": "Se déclenche quand le curseur atteint la position d'un marqueur."
+        }
       }
     ]
+  },
+  "properties": [
+    {
+      "id": "vertical",
+      "name": "Vertical",
+      "locale_name": {
+        "fr_FR": "Vertical"
+      },
+      "type": "Boolean",
+      "value": false,
+      "description": "Use vertical slider instead of horizontal.",
+      "locale_description": {
+        "fr_FR": "Utiliser un curseur vertical au lieu d'horizontal."
+      }
+    },
+    {
+      "id": "sliderLineColor",
+      "name": "Line Color",
+      "locale_name": {
+        "fr_FR": "Couleur ligne"
+      },
+      "type": "Color",
+      "separator": true,
+      "description": "Color of the slider divider line.",
+      "locale_description": {
+        "fr_FR": "Couleur de la ligne de séparation du curseur."
+      }
+    },
+    {
+      "id": "sliderLineWidth",
+      "name": "Line Width",
+      "locale_name": {
+        "fr_FR": "Largeur ligne"
+      },
+      "type": "Integer",
+      "value": 2,
+      "description": "Width in pixels of the slider divider line.",
+      "locale_description": {
+        "fr_FR": "Largeur en pixels de la ligne de séparation du curseur."
+      }
+    },
+    {
+      "id": "handle",
+      "name": "Handle",
+      "locale_name": {
+        "fr_FR": "Poignée"
+      },
+      "type": "Boolean",
+      "value": true,
+      "description": "Show a draggable handle on the slider line.",
+      "locale_description": {
+        "fr_FR": "Afficher une poignée déplaçable sur la ligne du curseur."
+      }
+    }
+  ],
+  "events": [
+    {
+      "id": "onDragStart",
+      "name": "On drag start",
+      "locale_name": {
+        "fr_FR": "Commencer à glisser"
+      },
+      "description": "Fires when the user starts dragging the slider.",
+      "locale_description": {
+        "fr_FR": "Se déclenche quand l'utilisateur commence à déplacer le curseur."
+      }
+    },
+    {
+      "id": "onDragEnd",
+      "name": "On drag end",
+      "locale_name": {
+        "fr_FR": "Arrêt de glisser"
+      },
+      "description": "Fires when the user releases the slider.",
+      "locale_description": {
+        "fr_FR": "Se déclenche quand l'utilisateur relâche le curseur."
+      }
+    }
+  ],
+  "synchronization": [
+    {
+      "id": "position",
+      "name": "Synchronize position",
+      "locale_name": {
+        "fr_FR": "Synchroniser position"
+      },
+      "description": "Synchronize the slider position with another component.",
+      "locale_description": {
+        "fr_FR": "Synchroniser la position du curseur avec un autre composant."
+      }
+    }
+  ],
+  "resources": [
+    {
+      "id": "left.png",
+      "name": "Left image",
+      "locale_name": {
+        "fr_FR": "Image gauche"
+      },
+      "type": "Image",
+      "localization": false,
+      "required": true,
+      "description": "Left image (before) for the comparison.",
+      "locale_description": {
+        "fr_FR": "Image gauche (avant) pour la comparaison."
+      }
+    },
+    {
+      "id": "right.png",
+      "name": "Right image",
+      "locale_name": {
+        "fr_FR": "Image droite"
+      },
+      "type": "Image",
+      "localization": false,
+      "required": true,
+      "description": "Right image (after) for the comparison.",
+      "locale_description": {
+        "fr_FR": "Image droite (après) pour la comparaison."
+      }
+    }
+  ]
 }
-  
